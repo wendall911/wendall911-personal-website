@@ -1,0 +1,3 @@
+Having lost our office space due to a building sale, Torus Technologies Co-Working space and office was closed. I was renting an office in a local building when I decided to form a partnership with LiveSite Networks. Since I already provided hosting for websites, email, and IT support for several companies, we decided to do a joint venture in a new shared office space, effectively moving all clients from Torus Technologies to LiveSite Networks.
+
+Throughout this partnership, as a principal software engineer, I provided enterprise web development and acted as the primary DevOps Engineer for all IT infrastructure.

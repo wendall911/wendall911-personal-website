@@ -1,0 +1,1 @@
+I partnered with [Advocates for Basic Equality, Inc.](https://www.ablelaw.org/), to rebuild their website and client intake software to align with the Americans with Disabilities Act. This project required implementing a custom CMS solution and a new client intake system. I provided both software engineering and software architecture support for the entire project.

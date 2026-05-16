@@ -1,0 +1,1 @@
+Empowering, Inc. was a small non-profit in Spokane, Washington that provided after-school programming to marginalized community students from 1998 through 2021. After leaving my position as a founding board member, I continued to provide technical consulting and resources for the organization. I provided IT consulting, branding and design services, and other technical support.
