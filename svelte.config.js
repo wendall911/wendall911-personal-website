@@ -21,6 +21,7 @@ const config = {
             $ui: './src/components/ui',
             $lib: './src/lib',
             $content: './src/content',
+            $meta: './src/meta',
             $features: './src/features',
         },
     },
