@@ -75,6 +75,13 @@ Transition: the tool helped build the framework that governs it.
 
 Purpose: two or three sentences. Sardonic register at highest here. Land and move on.
 
+The license incident: the tool scaffolded an open source governance repository —
+one explicitly about protecting commons resources — without a license. All-rights-
+reserved by default. The most foundational requirement of the thing it was building,
+missed. A human caught it. This is the form/substance gap in one example: the model
+learned what open source repositories look like from training data; it did not learn
+what makes a repository an open source project.
+
 Transition: the "(Mostly)."
 
 ---
