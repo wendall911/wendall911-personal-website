@@ -26,13 +26,13 @@ Every content entry should communicate the *why* alongside the *what*. Outcomes 
 
 ## Session Start Workflow
 
-Before beginning any work, synchronize with the remote:
+Before beginning any work:
 
-1. `git fetch origin` — check for remote changes without modifying the working tree
-2. `git status` — verify the local repository is clean before rebasing
-3. `git rebase origin/main` — apply any remote changes; fast-forwards if no local commits diverge
+1. `git status` — verify the local repository is clean and confirm the current branch
+2. `git pull` — pull remote changes; fast-forwards if no local commits diverge
+3. If git warns that it cannot automatically rebase, run `git rebase` directly
 
-The GitHub UI is used as a CMS for markdown content in `src/content/`. Content edits may arrive from non-development contributors between sessions. External PR contributions are also possible. Always fetch before starting work.
+The GitHub UI is used as a CMS for markdown content in `src/content/`. Content edits may arrive from non-development contributors between sessions. External PR contributions are also possible. Always pull before starting work.
 
 ## Deployment Model
 - Deployed on a personal server via manual `git pull`
@@ -47,10 +47,12 @@ Hybrid content architecture — parallel trees:
   - `experience/<slug>.md` — one file per employer, prose narrative
   - `education/<slug>.md` — placeholder files (no prose yet)
   - `insight/01-04.md` — insight Q&A prose, pure body text (no frontmatter)
+  - `writing/<slug>.md` — long-form writing, one file per piece, pure body text (no frontmatter)
 - `src/meta/` — TypeScript only, developer-maintained (data tree)
   - `experience.ts` — typed metadata: slug, company, url, logo, dates, roles[]
   - `education.ts` — typed metadata: slug, institution, logo, program, degree, dates
   - `insight.ts` — typed metadata: slug, title, order
+  - `writing.ts` — typed metadata: slug, title, date, tags[], summary
   - `info.ts` — METADATA and INFO (site title, contact)
   - `links.ts` — NAVIGATION array
 - `src/components/` — UI components
