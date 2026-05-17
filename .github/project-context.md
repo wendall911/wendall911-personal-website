@@ -24,6 +24,16 @@ Every content entry should communicate the *why* alongside the *what*. Outcomes 
 - `main` is the only branch
 - No version tags — `main`/HEAD is the release; deploy from HEAD
 
+## Session Start Workflow
+
+Before beginning any work, synchronize with the remote:
+
+1. `git fetch origin` — check for remote changes without modifying the working tree
+2. `git status` — verify the local repository is clean before rebasing
+3. `git rebase origin/main` — apply any remote changes; fast-forwards if no local commits diverge
+
+The GitHub UI is used as a CMS for markdown content in `src/content/`. Content edits may arrive from non-development contributors between sessions. External PR contributions are also possible. Always fetch before starting work.
+
 ## Deployment Model
 - Deployed on a personal server via manual `git pull`
 - An nginx restart is required after pulling to apply changes
