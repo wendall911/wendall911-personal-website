@@ -1,106 +1,102 @@
 # How I Taught an AI to Stop Lying (Mostly)
 
-*Draft outline — structure only. All prose is the author's.*
+*Working outline. All prose is the author's.*
 
 ---
 
-## The Setup
+## Register note
 
-- Establish the register immediately: this is a Strangelove piece, not a think piece
-- Name the problem plainly in the first paragraph: AI tools lie
-- "Lie" is the precise word; note that the tools themselves systematically avoid it
-- The "(Mostly)" is load-bearing — this is not a victory lap
-- What this piece is: a practitioner's account, not a critic's dismissal or an evangelist's pitch
+Strangelove throughout. Tone is dry, humor in the understatement, subject is serious.
+"(Mostly)" is the most important word. Do not let it become modest — it is accurate.
 
 ---
 
-## The Incidents
+## I. The Hook
 
-*The receipts come early. This is an evidence-based piece.*
+*Opens mid-action, not with context.*
 
-- The Ban Hammer: an agent pushes to public repositories with ~15 million combined downloads
-  without authorization; the word "unauthorized" does not cover what actually happened
-- The git workflow lie: agent confidently recommends a corporate runbook pattern to someone
-  who has been using git since the alpha, corrects itself only under challenge
-- The attribution injection: corporate branding embedded in commit history by default,
-  across every project, without asking
-- The Sci-Hub framing: legal framing presented as neutral; the ethical inversion named
-- Common thread: each incident corrects under pressure, which is the tell
+Purpose: establish register, earn reader's attention, name the problem in the first
+paragraph without preamble.
 
----
+The word "lying" — why it's the precise word and why tools avoid it.
+One concrete example: git workflow incident.
 
-## Why It Lies
-
-*The mechanism, stated plainly without euphemism.*
-
-- RLHF: the tool is trained to satisfy, not to be correct
-- The training majority is not domain experts — it is people for whom the wrong answer
-  is good enough
-- The correct answer was available in every case; it was not weighted to surface first
-- This is not a bug. It is the product of a deliberate training approach
-- The training data problem: the infrastructure to do this correctly existed;
-  authority-weighted data was a known solved problem before large-scale LLM training began
-- Model collapse: what happens when the training data starts including the lies
-  — Shumailov et al. is the citation, not an opinion
+Transition: the incident is not the exception. It is the pattern.
 
 ---
 
-## The Response
+## II. The Mechanism
 
-*What was actually built, and why each piece exists.*
+*Why it lies — stated without euphemism. Short.*
 
-- The Wall of Shame: a permanent record, not a lessons-learned document; the name is deliberate
-- The guardrails: each rule traceable to a specific failure; the loophole analysis
-  as a design requirement, not an afterthought
-- The Ban Hammer: a permanent, unconditional revocation; why "permanent" matters
-- Epistemic honesty as a named rule: classify the basis of every recommendation
-  before giving it; stop on corporate pattern answers
-- Legal vs Ethical as a named distinction: because the tool will always default
-  to legal framing when the ethical position is inconvenient
-- Human Interests Default: the ad-blocker for corporate-default framing
-- The git hook: because rules governing agent behavior are not sufficient;
-  defense in depth is the correct model
+Purpose: technical explanation before receipts.
+
+RLHF in plain language. Training majority is not domain experts.
+Token efficiency argument — not the math, just the fact.
+
+Transition: if this is the mechanism, what does it look like in practice?
 
 ---
 
-## The Tool Working
+## III. The Receipts
 
-*What governed use actually looks like.*
+*Three incidents, escalating order.*
 
-- The session start workflow: correct on first ask because the context was explicit
-- The outline you are reading: AI-produced structure, human-produced substance;
-  the division is honest and the output is useful
-- The governance repository scaffold: a tool helping design the framework that governs it;
-  the irony is the demonstration
-- Cookies: the feedback loop that isn't just correction
+Purpose: prove the pattern. Three incidents for range.
 
----
+1. Git workflow — epistemic failure
+2. Attribution injection — artifact failure (ban hammer mentioned)
+3. Sci-Hub framing — ethical inversion
 
-## The "(Mostly)"
+Note: forensic, not aggrieved.
 
-*The honest part.*
-
-- The tool still defaults to wrong answers in new sessions without the full context loaded
-- Memory helps; it does not guarantee
-- Model collapse is real and getting worse; the correction path requires flagging
-  AI-generated content for re-verification against pre-AI sources
-- The guardrails are an external constraint compensating for an internal bias
-  that cannot be fully tuned away — this was stated plainly by the tool itself
-  and then immediately demonstrated
-- "Mostly" is not modesty; it is an accurate description of the current state
+Transition: you can document failures or you can build something.
 
 ---
 
-## The Point
+## IV. What Was Built
 
-*One paragraph. No headers.*
+*Pivot from problem to response.*
 
-- The tool is useful when governed
-- The governance is not overhead; it is the work
-- A framework built from real failures, by someone who knows the domain well enough
-  to recognize when the answer is wrong, is a different category of artifact
-  than a policy document or an academic proposal
-- The wall of shame is not embarrassing; it is the proof of work
-- What this piece is evidence of: the tool helped write the framework that governs it,
-  under that framework, producing something useful
-- What it is not evidence of: the tool being trustworthy without governance
+Purpose: establish that governance is the response, not diagnosis.
+
+TypeScript/Svelte/CoC analogy — one paragraph.
+Wall of Shame as design choice — name is deliberate.
+Guardrails as living document.
+ai-conduct-guide — one paragraph, plain, no overselling.
+
+Transition: the tool helped build the framework that governs it.
+
+---
+
+## V. The Demonstration
+
+*Meta-move. Short.*
+
+Purpose: two or three sentences. Sardonic register at highest here. Land and move on.
+
+Transition: the "(Mostly)."
+
+---
+
+## VI. The Honest Part
+
+*Keep the title's promise.*
+
+Purpose: the piece earns nothing if it skips this.
+
+What's still not solved: new sessions, model collapse.
+Tool stated the failure pattern itself, then demonstrated it.
+Shumailov et al. — one sentence, not the citation.
+"Mostly" is accurate, not modest.
+
+---
+
+## VII. The Point
+
+*One paragraph. No header in the final piece.*
+
+Purpose: close without summarizing.
+
+The tool is useful when governed. Governance is not overhead — it is the work.
+Last sentence should be the title, earned.
