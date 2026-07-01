@@ -2,5 +2,9 @@
     "files.associations": {
         "*.css": "tailwindcss"
     },
-    "tailwindCSS.experimental.configFile": "src/app.css"
+    "tailwindCSS.experimental.configFile": "src/app.css",
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "svelte.enable-ts-plugin": true
 }
