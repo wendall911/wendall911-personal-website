@@ -1,4 +1,4 @@
-# How I Taught an AI to Stop Lying (Mostly)
+# How I Taught an AI to Stop Lying (Mostly), and Get Back to Work
 
 *Working outline. All prose is the author's.*
 
