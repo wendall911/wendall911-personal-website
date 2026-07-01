@@ -7,6 +7,7 @@ export const METADATA = {
 export const INFO = {
     logo: '/logo.svg',
     overview: '',
+    tagline: 'CTO | Software Architecture | Consultant',
     contact: {
         messaging: {
             p1: 'wendallc',

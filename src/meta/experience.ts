@@ -121,7 +121,12 @@ export const EXPERIENCE: ExperienceEntry[] = [
         startDate: 'August 2008',
         endDate: 'February 2014',
         roles: [
-            { slug: 'cto', title: 'CTO', startDate: 'June 2009', endDate: 'February 2014' },
+            {
+                slug: 'cto',
+                title: 'CTO',
+                startDate: 'June 2009',
+                endDate: 'February 2014',
+            },
             {
                 slug: 'senior-architect',
                 title: 'Senior Software Architect',
@@ -137,7 +142,12 @@ export const EXPERIENCE: ExperienceEntry[] = [
         startDate: 'August 2004',
         endDate: 'August 2008',
         roles: [
-            { slug: 'index', title: 'Co-Chair', startDate: 'August 2004', endDate: 'August 2008' },
+            {
+                slug: 'index',
+                title: 'Co-Chair',
+                startDate: 'August 2004',
+                endDate: 'August 2008',
+            },
         ],
     },
     {
@@ -256,7 +266,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
         endDate: 'February 2001',
         roles: [
             {
-                slug: 'index',
+                slug: 'executive-producer',
                 title: 'Executive Producer / Principal Software Engineer',
                 startDate: 'August 1999',
                 endDate: 'February 2001',
