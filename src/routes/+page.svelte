@@ -1,26 +1,28 @@
 <script lang="ts">
     import { careerHtml, education, experience, insight, writing, contact } from '$lib/content';
     import { NAVIGATION } from '$meta/links';
+    import { CircleChevronDown } from '@lucide/svelte';
 
     const sectionName = Object.fromEntries(
         NAVIGATION.map(({ name, url }) => [url.replace('/#', ''), name])
     );
 </script>
 
-<main class="min-h-screen">
-    <section id="cv" class="mx-auto w-full max-w-content px-8 py-16">
-        <section id="hello">
-            <div class="flex flex-col gap-3 py-96 px-4"></div>
-            <div class="flex justify-center pb-20">
-                <a href="/#career">Say Hello</a>
-            </div>
-        </section>
-
-        <section id="career">
+<main class="">
+    <div id="hello">
+        <div class="flex flex-col gap-3 py-0 px-4"></div>
+        <div class="flex flex-col justify-center items-center">
+            <a href="/#career">Say Hello</a>
+            <br/>
+            <a href="/#career"><CircleChevronDown size={48} /></a>
+        </div>
+    </div>
+    <section id="cv" class="px-8 py-8">
+        <section id="career" class="pt-25">
             <div class="flex flex-col gap-3 py-2 px-4 header">
                 <h2>{sectionName['career']}</h2>
             </div>
-            <div class="px-4 py-2 mt-4 [&_strong]:font-semibold">
+            <div class="[&_strong]:font-semibold content">
                 {@html careerHtml}
             </div>
         </section>
@@ -29,7 +31,7 @@
             <div class="flex flex-col gap-3 py-2 px-4 header">
                 <h2>{sectionName['education']}</h2>
             </div>
-            <div class="flex">
+            <div class="flex content">
                 <ul class="mt-4 space-y-6">
                     {#each education as entry}
                         <li>
@@ -54,7 +56,7 @@
             <div class="flex flex-col gap-3 py-2 px-4 header">
                 <h2>{sectionName['experience']}</h2>
             </div>
-            <div class="flex">
+            <div class="flex content">
                 <ul class="mt-4 space-y-10">
                     {#each experience as entry}
                         <li>

@@ -2,15 +2,8 @@
 
 @theme {
     --width-nav: 25rem;
-    --width-content: 48rem;
-}
-
-.logo-img {
-    filter: invert(1);
-}
-
-.dark .logo-img {
-    filter: none;
+    --width-left-sidebar: 15rem;
+    --width-content: 60rem;
 }
 
 @layer base {
@@ -31,6 +24,12 @@
     }
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+#page-layout {
+    min-height: 100vh;
+}
+
 .background-image {
     background-image: url('images/sunrise.webp');
     background-repeat: no-repeat;
@@ -41,7 +40,21 @@
     z-index: -2;
 }
 
+#page-content {
+    max-width: var(--width-content);
+}
+
+#left-sidebar {
+    margin-right: var(--width-left-sidebar);
+}
+
 #nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 80vh;
+    overflow-y: auto;
+    width: var(--width-nav);
     a {
         @apply text-zinc-700 dark:text-zinc-300;
     }
@@ -53,8 +66,41 @@
     }
 }
 
-#nav div.header, #nav div.button, #nav ul, #cv div.header {
+#mode-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+#hello, #mode-toggle {
+    a {
+        @apply text-zinc-300;
+    }
+    a:hover {
+        @apply text-zinc-100;
+    }
+    svg {
+        @apply text-white/80
+    }
+}
+
+#nav div.button, #nav ul, #cv div.header {
     @apply bg-white/80 dark:bg-zinc-900/80
+}
+
+#cv div.content {
+    @apply bg-white/80 dark:bg-zinc-900/80;
+    @apply text-zinc-600 dark:text-zinc-100;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+#nav div.header {
+    @apply bg-white/60 dark:bg-zinc-900/60
+}
+
+#tagline {
+    @apply text-yellow-700 dark:text-yellow-500 ;
 }
 
 #cv {
@@ -69,36 +115,3 @@
     }
 }
 
-@layer components {
-    .page-layout {
-        display: grid;
-        min-height: 100vh;
-        grid-template-columns: auto 1fr;
-    }
-
-    .page-nav {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        height: 100vh;
-        overflow-y: auto;
-        width: var(--width-nav);
-        padding: 1rem;
-    }
-
-    .page-aside {
-        display: none;
-        min-width: var(--width-nav);
-        padding: 1rem;
-    }
-
-    @media (min-width: 1024px) {
-        .page-layout {
-            grid-template-columns: auto 1fr auto;
-        }
-
-        .page-aside {
-            display: block;
-        }
-    }
-}
