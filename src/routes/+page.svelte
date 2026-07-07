@@ -9,12 +9,11 @@
     );
 </script>
 
-<main class="">
+<main>
     <div id="hello">
         <div class="flex flex-col gap-3 px-4"></div>
         <div class="flex flex-col justify-center items-center">
-            <a href="/#career">Say Hello</a>
-            <br/>
+            <a href="/#career" class="text-lg">Say Hello</a>
             <a href="/#career"><CircleChevronDown size={48} /></a>
         </div>
     </div>
@@ -23,7 +22,7 @@
             <div class="flex flex-col gap-3 py-2 px-4 header">
                 <h2>{sectionName['career']}</h2>
             </div>
-            <div class="[&_strong]:font-semibold content">
+            <div class="[&_strong]:font-semibold content text-lg">
                 {@html careerHtml}
             </div>
         </section>
@@ -58,26 +57,24 @@
                 <h2>{sectionName['experience']}</h2>
             </div>
             <div class="flex content">
-                <Accordion.Root type="single" id="experience-tree">
+                <Accordion.Root type="single" id="experience-tree" value={experience[0]?.company}>
                     {#each experience as entry}
-                        <Accordion.Item value={entry.company}>
-                            <Accordion.Header>
-                                <Accordion.Trigger class="flex lg:w-full flex-row">
-                                    <div class="flex flex-col sm:flex-row lg:w-full">
-                                        <div class="flex flex-col">
-                                            <h3>{entry.company}</h3>
-                                            <p>{entry.startDate}–{entry.endDate}</p>
-                                        </div>
-                                        <div class="flex lg:ml-auto truncate">
-                                            {#if entry.url}
-                                                <a href={entry.url}>{entry.url}</a>
-                                            {/if}
-                                        </div>
+                        <Accordion.Item value={entry.company} class="item">
+                            <Accordion.Header class="flex flex-col sm:flex-row">
+                                <Accordion.Trigger class="flex flex-row w-full">
+                                    <div class="flex flex-col">
+                                        <h3>{entry.company}</h3>
+                                        <p>{entry.startDate}–{entry.endDate}</p>
                                     </div>
                                 </Accordion.Trigger>
+                                <div class="flex items-start pt-0 sm:pt-5">
+                                    {#if entry.url}
+                                        <a href={entry.url} class="truncate -mx-3 mb-3 px-3 max-w-60">{entry.url}</a>
+                                    {/if}
+                                </div>
                             </Accordion.Header>
-                            <Accordion.Content forceMount={true} class="overflow-hidden">
-                                {#snippet child({ props, open })}
+                            <Accordion.Content forceMount={true}>
+                                {#snippet child({ open })}
                                     {#if open}
                                         <Accordion.Root
                                             type="single"
@@ -86,13 +83,15 @@
                                         >
                                             {#each entry.roles as role}
                                                 <Accordion.Item value={role.slug}>
-                                                    <Accordion.Header>
-                                                        <Accordion.Trigger>
-                                                            {role.title} {role.startDate}–{role.endDate}
+                                                    <Accordion.Header class="flex">
+                                                        <Accordion.Trigger class="flex flex-row">
+                                                            <div class="flex flex-col">
+                                                                {role.title} {role.startDate}–{role.endDate}
+                                                            </div>
                                                         </Accordion.Trigger>
                                                     </Accordion.Header>
                                                     <Accordion.Content forceMount={true} class="overflow-hidden">
-                                                        {#snippet child({ props, open })}
+                                                        {#snippet child({ open })}
                                                             {#if open}
                                                                 <div
                                                                     class="ml-6 transition-all duration-300 ease-out {open ? 'animate-accordion-down' : 'animate-accordion-up'}"
@@ -100,7 +99,7 @@
                                                                     {#if role.clientUrl}
                                                                         <a href={role.clientUrl}>{role.client}</a>
                                                                     {:else}
-                                                                        {role.client}
+                                                                        <strong>{role.client}</strong>
                                                                     {/if}
                                                                 {#if role.html}
                                                                     {@html role.html}
