@@ -8,23 +8,26 @@
 
     let { children } = $props();
 
+    let sentinel = $state<HTMLElement>();
     let scrolled = $state(false);
     let menuOpen = $state(false);
 
     $effect(() => {
-        const onScroll = () => {
-            const wasScrolled = scrolled;
-            scrolled = window.scrollY > 50;
-            if (wasScrolled && !scrolled) menuOpen = false;
-        };
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+        if (!sentinel) return;
+
+        const observer = new IntersectionObserver(([entry]) => {
+            scrolled = !entry.isIntersecting;
+            if (entry.isIntersecting) menuOpen = false;
+        });
+        observer.observe(sentinel);
+
+        return () => observer.disconnect();
     });
 </script>
 
 <ModeWatcher defaultMode="dark" />
 
+<div bind:this={sentinel} aria-hidden="true"></div>
 <div class="background-image" role="img" aria-label="Background image of a mountain and valley landscape with a lake in the distance, at sunrise."></div>
 <nav id="nav" aria-label="Page navigation">
     <div hidden={scrolled} class="flex flex-col gap-3 items-center py-2 header">
@@ -83,8 +86,7 @@
     {/if}
 </button>
 
-<div id="page-layout" class="flex flex-col min-h-screen sm:flex-row">
-    <div id="left-sidebar" class="hidden lg:block"></div>
+<div id="page-layout" class="flex min-h-screen justify-center">
     <div id="page-content">
         {@render children()}
     </div>
