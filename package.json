@@ -46,6 +46,7 @@
         "@internationalized/date": "^3.12.1",
         "@lucide/svelte": "^1.16.0",
         "@sveltejs/adapter-static": "^3.0.10",
+        "bits-ui": "^2.18.1",
         "classnames": "^2.5.1",
         "clsx": "^2.1.1",
         "marked": "^18.0.5",
