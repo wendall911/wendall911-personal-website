@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 @import 'tailwindcss/index.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -6,6 +7,9 @@
     --width-nav: 25rem;
     --width-left-sidebar: 15rem;
     --width-content: 60rem;
+    --breakpoint-sm: 37.5rem;  /* 600px — above largest phone (~430) */
+    --breakpoint-lg: 80rem;    /* 1280px — desktop floor */
+    --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
 
     @keyframes accordion-down {
         from {
@@ -38,16 +42,16 @@
         @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
     }
     h1 {
-        @apply pb-1 text-3xl lg:pb-2 lg:text-5xl;
+        @apply pb-1 text-3xl sm:pb-2 sm:text-5xl;
     }
     h2 {
-        @apply pb-1 text-2xl lg:pb-2 lg:text-4xl;
+        @apply pb-1 text-2xl sm:pb-2 sm:text-4xl;
     }
     h3 {
-        @apply pb-1 text-xl lg:pb-2 lg:text-3xl;
+        @apply pb-1 text-xl sm:pb-2 sm:text-3xl;
     }
     p {
-        @apply pb-1 lg:pb-2;
+        @apply pb-1 sm:pb-2;
     }
 }
 
@@ -78,7 +82,7 @@
     top: 0;
     z-index: 10;
     overflow-y: auto;
-    width: var(--width-nav);
+    width: min(var(--width-nav), 100%);
     a {
         @apply text-zinc-700 dark:text-zinc-300;
     }
@@ -104,7 +108,7 @@
         @apply text-zinc-100;
     }
     svg {
-        @apply text-white/80
+        @apply text-white/80;
     }
 }
 
@@ -113,22 +117,21 @@
 }
 
 #nav div.button, #nav ul, #cv div.header {
-    @apply bg-white/80 dark:bg-zinc-900/80
+    @apply bg-white/80 dark:bg-zinc-900/80;
 }
 
 #cv div.content {
-    @apply bg-white/80 dark:bg-zinc-900/80;
-    @apply text-zinc-600 dark:text-zinc-100;
-    padding: 2rem;
-    margin-top: 1rem;
+    @apply bg-white/70 dark:bg-zinc-900/70;
+    @apply text-zinc-800 dark:text-zinc-100;
+    @apply border-t-zinc-500 border-t-2;
 }
 
 #nav div.header {
-    @apply bg-white/60 dark:bg-zinc-900/60
+    @apply bg-white/60 dark:bg-zinc-900/60;
 }
 
 #tagline {
-    @apply text-yellow-700 dark:text-yellow-500 ;
+    @apply text-yellow-700 dark:text-yellow-500;
 }
 
 #cv {
@@ -144,11 +147,10 @@
 }
 
 #experience-tree {
-    width: var(--width-content);
+    width: 100%;
 }
 
 #experience button {
-    display: flex;
     text-align: left;
     cursor: pointer;
     padding: 0.75rem 0;
@@ -167,7 +169,6 @@
 
 #experience button::before {
     content: '';
-    display: inline-block;
     width: 1em;
     height: 1em;
     border-right: 0.15em solid currentColor;
@@ -184,7 +185,11 @@
 }
 
 #experience .role-accordion {
-    padding-left: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    @apply overflow-hidden;
+    @apply bg-white/90 dark:bg-zinc-900/90;
+    @apply text-zinc-600 dark:text-zinc-100;
+    margin-bottom: 1rem;
 }
 
 #experience .role-accordion button {
@@ -201,4 +206,13 @@
 
 #experience .role-accordion button[data-state="open"]::before {
     transform: rotate(45deg) translateY(-0.1em);
+}
+
+#experience .item {
+    @apply border-t-zinc-500 border-t-1;
+    padding: 0 2rem;
+}
+
+#career .content {
+    padding: 1rem 2rem;
 }
