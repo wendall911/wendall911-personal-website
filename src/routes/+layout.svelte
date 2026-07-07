@@ -36,7 +36,7 @@
     </div>
 
     <div hidden={!scrolled} class="flex header">
-        <div class="flex items-center px-4 py-2">
+        <div class="flex flex-col items-center px-4 py-2">
             <h3>{METADATA.title}</h3>
         </div>
         <div class="flex px-4 py-2 ml-auto button">

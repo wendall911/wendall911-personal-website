@@ -11,7 +11,6 @@
 
 <main>
     <div id="hello">
-        <div class="flex flex-col gap-3 px-4"></div>
         <div class="flex flex-col justify-center items-center">
             <a href="/#career" class="text-lg">Say Hello</a>
             <a href="/#career"><CircleChevronDown size={48} /></a>
@@ -19,7 +18,7 @@
     </div>
     <section id="cv" class="px-8 py-8">
         <section id="career" class="pt-25">
-            <div class="flex flex-col gap-3 py-2 px-4 header">
+            <div class="header">
                 <h2>{sectionName['career']}</h2>
             </div>
             <div class="[&_strong]:font-semibold content text-lg">
@@ -28,32 +27,28 @@
         </section>
 
         <section id="education">
-            <div class="flex flex-col gap-3 py-2 px-4 header">
+            <div class="header">
                 <h2>{sectionName['education']}</h2>
             </div>
-            <div class="flex content">
-                <ul class="mt-4 space-y-6">
-                    {#each education as entry}
-                        <li>
-                            <p class="font-semibold">
-                                {#if entry.url}
-                                    <a href={entry.url}>{entry.institution}</a>
-                                {:else}
-                                    {entry.institution}
-                                {/if}
-                            </p>
-                            <p>
-                                {#if entry.degree}{entry.degree} · {/if}{entry.program}
-                            </p>
-                            <p>{entry.startDate}–{entry.endDate}</p>
-                        </li>
-                    {/each}
-                </ul>
+            <div class="flex flex-col content">
+                {#each education as entry}
+                <div class="flex item">
+                    <div class="flex flex-col m-5">
+                        <img src="{entry.logo}" alt="{entry.institution}" height={70} width={70} />
+                    </div>
+                    <div class="flex flex-col mt-5">
+                        <h3 class="font-semibold">{entry.institution}</h3>
+                        <p>
+                            {#if entry.degree}{entry.degree},  {/if}{entry.program} | {entry.startDate}–{entry.endDate}
+                        </p>
+                    </div>
+                </div>
+                {/each}
             </div>
         </section>
 
         <section id="experience">
-            <div class="flex flex-col gap-3 py-2 px-4 header">
+            <div class="header">
                 <h2>{sectionName['experience']}</h2>
             </div>
             <div class="flex content">
