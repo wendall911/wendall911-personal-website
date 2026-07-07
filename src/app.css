@@ -1,9 +1,36 @@
 @import 'tailwindcss/index.css';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --width-nav: 25rem;
     --width-left-sidebar: 15rem;
     --width-content: 60rem;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+            opacity: 0;
+        }
+        to {
+            height: var(--bits-accordion-content-height);
+            opacity: 1;
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--bits-accordion-content-height);
+            opacity: 1;
+        }
+        to {
+            height: 0;
+            opacity: 0;
+        }
+    }
+
+    --animate-accordion-down: accordion-down 0.3s ease-out;
+    --animate-accordion-up: accordion-up 0.3s ease-out;
 }
 
 @layer base {
@@ -23,8 +50,6 @@
         @apply pb-1 lg:pb-2;
     }
 }
-
-@custom-variant dark (&:where(.dark, .dark *));
 
 #page-layout {
     min-height: 100vh;
@@ -52,7 +77,6 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    height: 80vh;
     overflow-y: auto;
     width: var(--width-nav);
     a {
@@ -82,6 +106,10 @@
     svg {
         @apply text-white/80
     }
+}
+
+#hello {
+    margin-top: 25rem;
 }
 
 #nav div.button, #nav ul, #cv div.header {
@@ -115,3 +143,62 @@
     }
 }
 
+#experience-tree {
+    width: var(--width-content);
+}
+
+#experience button {
+    display: flex;
+    text-align: left;
+    cursor: pointer;
+    padding: 0.75rem 0;
+    min-height: 44px;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+}
+
+#experience button:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+#experience button::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-right: 0.15em solid currentColor;
+    border-bottom: 0.15em solid currentColor;
+    transform: rotate(-45deg);
+    margin-right: 1em;
+    margin-top: 0.5em;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+#experience button[data-state="open"]::before {
+    transform: rotate(45deg) translateY(-0.15em);
+}
+
+#experience .role-accordion {
+    padding-left: 1.5rem;
+}
+
+#experience .role-accordion button {
+    min-height: 36px;
+    padding: 0.5rem 0;
+}
+
+#experience .role-accordion button::before {
+    width: 0.5em;
+    height: 0.5em;
+    border-right: 0.1em solid currentColor;
+    border-bottom: 0.1em solid currentColor;
+}
+
+#experience .role-accordion button[data-state="open"]::before {
+    transform: rotate(45deg) translateY(-0.1em);
+}

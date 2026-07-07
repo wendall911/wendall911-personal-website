@@ -17,6 +17,7 @@
             scrolled = window.scrollY > 50;
             if (wasScrolled && !scrolled) menuOpen = false;
         };
+        onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     });

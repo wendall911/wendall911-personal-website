@@ -2,6 +2,7 @@
     import { careerHtml, education, experience, insight, writing, contact } from '$lib/content';
     import { NAVIGATION } from '$meta/links';
     import { CircleChevronDown } from '@lucide/svelte';
+    import { Accordion } from 'bits-ui';
 
     const sectionName = Object.fromEntries(
         NAVIGATION.map(({ name, url }) => [url.replace('/#', ''), name])
@@ -10,7 +11,7 @@
 
 <main class="">
     <div id="hello">
-        <div class="flex flex-col gap-3 py-0 px-4"></div>
+        <div class="flex flex-col gap-3 px-4"></div>
         <div class="flex flex-col justify-center items-center">
             <a href="/#career">Say Hello</a>
             <br/>
@@ -57,49 +58,66 @@
                 <h2>{sectionName['experience']}</h2>
             </div>
             <div class="flex content">
-                <ul class="mt-4 space-y-10">
+                <Accordion.Root type="single" id="experience-tree">
                     {#each experience as entry}
-                        <li>
-                            <div class="mb-2 flex flex-wrap items-baseline gap-x-4">
-                                <p>
-                                    {#if entry.url}
-                                        <a href={entry.url}>{entry.company}</a>
-                                    {:else}
-                                        {entry.company}
+                        <Accordion.Item value={entry.company}>
+                            <Accordion.Header>
+                                <Accordion.Trigger class="flex lg:w-full flex-row">
+                                    <div class="flex flex-col sm:flex-row lg:w-full">
+                                        <div class="flex flex-col">
+                                            <h3>{entry.company}</h3>
+                                            <p>{entry.startDate}–{entry.endDate}</p>
+                                        </div>
+                                        <div class="flex lg:ml-auto truncate">
+                                            {#if entry.url}
+                                                <a href={entry.url}>{entry.url}</a>
+                                            {/if}
+                                        </div>
+                                    </div>
+                                </Accordion.Trigger>
+                            </Accordion.Header>
+                            <Accordion.Content forceMount={true} class="overflow-hidden">
+                                {#snippet child({ props, open })}
+                                    {#if open}
+                                        <Accordion.Root
+                                            type="single"
+                                            class="role-accordion transition-all duration-600 ease-out {open ? 'animate-accordion-down' : 'animate-accordion-up'}"
+                                            value={entry.roles[0]?.slug}
+                                        >
+                                            {#each entry.roles as role}
+                                                <Accordion.Item value={role.slug}>
+                                                    <Accordion.Header>
+                                                        <Accordion.Trigger>
+                                                            {role.title} {role.startDate}–{role.endDate}
+                                                        </Accordion.Trigger>
+                                                    </Accordion.Header>
+                                                    <Accordion.Content forceMount={true} class="overflow-hidden">
+                                                        {#snippet child({ props, open })}
+                                                            {#if open}
+                                                                <div
+                                                                    class="ml-6 transition-all duration-300 ease-out {open ? 'animate-accordion-down' : 'animate-accordion-up'}"
+                                                                >
+                                                                    {#if role.clientUrl}
+                                                                        <a href={role.clientUrl}>{role.client}</a>
+                                                                    {:else}
+                                                                        {role.client}
+                                                                    {/if}
+                                                                {#if role.html}
+                                                                    {@html role.html}
+                                                                {/if}
+                                                                </div>
+                                                            {/if}
+                                                        {/snippet}
+                                                    </Accordion.Content>
+                                                </Accordion.Item>
+                                            {/each}
+                                        </Accordion.Root>
                                     {/if}
-                                </p>
-                                <p>{entry.startDate}–{entry.endDate}</p>
-                            </div>
-                            {#if entry.html}
-                                <div class="mb-4">
-                                    {@html entry.html}
-                                </div>
-                            {/if}
-                            <ul class="space-y-4">
-                                {#each entry.roles as role}
-                                    <li>
-                                        <p>{role.title}</p>
-                                        {#if role.client}
-                                            <p>
-                                                {#if role.clientUrl}
-                                                    <a href={role.clientUrl}>{role.client}</a>
-                                                {:else}
-                                                    {role.client}
-                                                {/if}
-                                            </p>
-                                        {/if}
-                                        <p>{role.startDate}–{role.endDate}</p>
-                                        {#if role.slug !== 'index' && role.html}
-                                            <div class="mt-2">
-                                                {@html role.html}
-                                            </div>
-                                        {/if}
-                                    </li>
-                                {/each}
-                            </ul>
-                        </li>
+                                {/snippet}
+                            </Accordion.Content>
+                        </Accordion.Item>
                     {/each}
-                </ul>
+                </Accordion.Root>
             </div>
         </section>
 
