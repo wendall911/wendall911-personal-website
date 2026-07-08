@@ -121,7 +121,7 @@
     }
 }
 
-#nav div.button, #nav ul, #cv div.header {
+#nav div.button, #nav ul, #cv div.header, #contact div.header {
     @apply bg-white/85 dark:bg-zinc-900/85;
 }
 
@@ -149,13 +149,13 @@
     }
 }
 
-#cv div.content {
+#cv div.content, #contact div.content {
     @apply bg-white/70 dark:bg-zinc-900/70;
     @apply text-zinc-800 dark:text-zinc-100;
     @apply border-t-zinc-500 border-t-2;
 }
 
-#cv div.header {
+#cv div.header, #contact div.header {
     @apply flex flex-col gap-3 py-2 px-4;
 }
 

@@ -14,6 +14,22 @@ export const INFO = {
             p2: '83864',
             p3: 'com',
         },
-        accounts: [] as Array<{ name: string; url: string }>,
+        accounts: [
+            {
+                name: 'LinkedIn',
+                url: 'https://www.linkedin.com/in/wendall911/',
+                linkedin: true,
+            },
+            {
+                name: 'GitHub',
+                url: 'https://github.com/wendall911',
+                github: true,
+            },
+            {
+                name: 'Mastadon',
+                url: 'https://hachyderm.io/@wendall911',
+                mastadon: true,
+            },
+        ] as Array<{ name: string; url: string; [key: string]: string | boolean }>,
     },
 };

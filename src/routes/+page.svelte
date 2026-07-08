@@ -1,9 +1,10 @@
 <script lang="ts">
-    import { careerHtml, education, experience, insight, writing, contact } from '$lib/content';
+    import { careerHtml, education, experience, insight, writing } from '$lib/content';
     import { NAVIGATION } from '$meta/links';
     import { METADATA } from '$meta/info';
     import { CircleChevronDown } from '@lucide/svelte';
     import { Accordion } from 'bits-ui';
+    import Contacts from '$comp/Contacts.svelte';
 
     const sectionName = Object.fromEntries(
         NAVIGATION.map(({ name, url }) => [url.replace('/#', ''), name])
@@ -175,21 +176,10 @@
     </section>
 
     <section id="contact" class="mx-auto w-full max-w-content px-8 mb-10">
-        <h2>{sectionName['contact']}</h2>
-        <p class="mt-4">
-            <a href="mailto:{contact.messaging.p1}@{contact.messaging.p2}.{contact.messaging.p3}">
-                {contact.messaging.p1}@{contact.messaging.p2}.{contact.messaging.p3}
-            </a>
-        </p>
-        {#if contact.accounts.length}
-            <ul class="mt-4 space-y-2">
-                {#each contact.accounts as account}
-                    <li>
-                        <a href={account.url} class="text-sm">{account.name}</a>
-                    </li>
-                {/each}
-            </ul>
-        {/if}
+        <div class="header">
+            <h2>{sectionName['contact']}</h2>
+        </div>
+        <Contacts />
     </section>
 
 </main>
