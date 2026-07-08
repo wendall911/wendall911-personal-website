@@ -2,14 +2,13 @@
     import { page } from '$app/state';
 </script>
 
-<main class="mx-4 my-32 flex max-w-5xl flex-col items-center gap-16 self-center">
+<main>
     <article class="mb-8 flex flex-col gap-16">
         <div class="flex flex-col items-center gap-4 self-center">
             <h1 class="pb-1 text-5xl">Error {page.status}</h1>
             <span class="text-lg">{page.error?.message ?? 'Page Not Found'}</span>
         </div>
 
-        <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-        <a href="/"> Home </a>
+        <a href="/" data-sveltekit-reload> Home </a>
     </article>
 </main>
