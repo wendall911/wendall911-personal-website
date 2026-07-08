@@ -121,7 +121,7 @@
     }
 }
 
-#nav div.button, #nav ul, #cv header, #contact header {
+#nav div.button, #nav ul, header {
     @apply bg-white/85 dark:bg-zinc-900/85;
 }
 
@@ -137,7 +137,7 @@
     margin-top: 25rem;
 }
 
-#cv {
+#cv, #writings, #contact {
     a {
         @apply text-blue-700 dark:text-blue-300;
     }
@@ -147,15 +147,16 @@
     section {
         @apply mb-10;
     }
+    @apply px-8 py-8;
 }
 
-#cv div.content, #contact div.content {
+#cv div.content, #writings div.content, #contact div.content {
     @apply bg-white/70 dark:bg-zinc-900/70;
     @apply text-zinc-800 dark:text-zinc-100;
     @apply border-t-zinc-500 border-t-2;
 }
 
-#cv header, #contact header {
+header {
     @apply flex flex-col gap-3 py-2 px-4;
 }
 

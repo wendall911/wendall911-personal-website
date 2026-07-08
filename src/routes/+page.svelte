@@ -18,7 +18,7 @@
             <a href="/#career"><CircleChevronDown size={48} /></a>
         </div>
     </div>
-    <section id="cv" class="px-8 py-8">
+    <section id="cv">
         <section id="career" class="pt-25">
             <header>
                 <h2>{sectionName['career']}</h2>
@@ -151,31 +151,31 @@
                 </Accordion.Root>
             </div>
         </section>
-
     </section>
 
-    <section id="personal" class="mx-auto w-full max-w-content px-8">
-        <section id="writings" class="mb-10">
+    <section id="writings">
+        <header>
             <h2>{sectionName['writings']}</h2>
-            <ul class="mt-4 space-y-6">
+        </header>
+        <div class="content">
+            <ul class="m-4 space-y-6">
                 {#each writing as entry}
                     <li>
                         <p>
                             <a href="/writings/{entry.slug}">
                                 {entry.title}
-                            </a>
+                            </a> | {entry.date}
                         </p>
-                        <p>{entry.date}</p>
                         {#if entry.summary}
                             <p>{entry.summary}</p>
                         {/if}
                     </li>
                 {/each}
             </ul>
-        </section>
+        </div>
     </section>
 
-    <section id="contact" class="mx-auto w-full max-w-content px-8 mb-10">
+    <section id="contact" class="mx-auto w-full max-w-content">
         <header>
             <h2>{sectionName['contact']}</h2>
         </header>
