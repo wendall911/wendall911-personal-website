@@ -20,18 +20,18 @@
     </div>
     <section id="cv" class="px-8 py-8">
         <section id="career" class="pt-25">
-            <div class="header">
+            <header>
                 <h2>{sectionName['career']}</h2>
-            </div>
+            </header>
             <div class="[&_strong]:font-semibold content text-lg">
                 {@html careerHtml}
             </div>
         </section>
 
         <section id="education">
-            <div class="header">
+            <header>
                 <h2>{sectionName['education']}</h2>
-            </div>
+            </header>
             <div class="flex flex-col content">
                 {#each education as entry}
                 <div class="flex item">
@@ -50,9 +50,9 @@
         </section>
 
         <section id="experience">
-            <div class="header">
+            <header>
                 <h2>{sectionName['experience']}</h2>
-            </div>
+            </header>
             <div class="flex content">
                 <Accordion.Root type="single" id="experience-tree" value={experience[0]?.company}>
                     {#each experience as entry}
@@ -118,12 +118,12 @@
         </section>
 
         <section id="insight">
-            <div class="header">
+            <header>
                 <h2>{sectionName['insight']}</h2>
-            </div>
+            </header>
             <div class="flex content sm:flex-row flex-col">
                 <div class="flex flex-col insight-image">
-                    <img src="images/portrait.webp" width="100" alt="{METADATA.title}" />
+                    <img src="images/portrait.webp" width="100" alt="{METADATA.title} portrait." />
                 </div>
                 <Accordion.Root type="single" id="insight-tree" value={insight[0]?.title}>
                     {#each insight as item}
@@ -176,9 +176,9 @@
     </section>
 
     <section id="contact" class="mx-auto w-full max-w-content px-8 mb-10">
-        <div class="header">
+        <header>
             <h2>{sectionName['contact']}</h2>
-        </div>
+        </header>
         <Contacts />
     </section>
 

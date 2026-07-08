@@ -59,10 +59,10 @@
     <ul
         id="nav-menu"
         hidden={scrolled && !menuOpen}
-        class="flex flex-col gap-2 backdrop-blur"
+        class="flex flex-col gap-2 backdrop-blur mb-1"
     >
         {#each NAVIGATION as { name, url }}
-            <li>
+            <li class="pl-1 pr-1">
                 <a
                     href={url}
                     onclick={() => (menuOpen = false)}
