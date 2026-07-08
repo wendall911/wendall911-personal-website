@@ -12,7 +12,7 @@ export const INSIGHT: InsightEntry[] = [
     },
     {
         slug: '02',
-        title: "What is the one thing that should be taught in school that isn't already?",
+        title: "What is the one thing that should be taught in school?",
         order: 2,
     },
     {
