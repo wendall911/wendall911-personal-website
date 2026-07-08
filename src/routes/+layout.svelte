@@ -32,7 +32,7 @@
 <nav id="nav" aria-label="Page navigation">
     <div hidden={scrolled} class="flex flex-col gap-3 items-center py-2 header">
         <h1>{METADATA.title}</h1>
-        <h4 id="tagline">{INFO.tagline}</h4>
+        <h5 id="tagline">{INFO.tagline}</h5>
     </div>
 
     <div hidden={!scrolled} class="flex header">

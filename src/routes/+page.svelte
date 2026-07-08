@@ -1,6 +1,7 @@
 <script lang="ts">
     import { careerHtml, education, experience, insight, writing, contact } from '$lib/content';
     import { NAVIGATION } from '$meta/links';
+    import { METADATA } from '$meta/info';
     import { CircleChevronDown } from '@lucide/svelte';
     import { Accordion } from 'bits-ui';
 
@@ -12,7 +13,7 @@
 <main>
     <div id="hello">
         <div class="flex flex-col justify-center items-center">
-            <a href="/#career" class="text-lg">Say Hello</a>
+            <a href="/#career"><h4>Say Hello</h4></a>
             <a href="/#career"><CircleChevronDown size={48} /></a>
         </div>
     </div>
@@ -116,17 +117,38 @@
         </section>
 
         <section id="insight">
-            <h2>{sectionName['insight']}</h2>
-            <ul class="mt-4 space-y-10">
-                {#each insight as item}
-                    <li>
-                        <h3>{item.title}</h3>
-                        <div>
-                            {@html item.html}
-                        </div>
-                    </li>
-                {/each}
-            </ul>
+            <div class="header">
+                <h2>{sectionName['insight']}</h2>
+            </div>
+            <div class="flex content sm:flex-row flex-col">
+                <div class="flex flex-col insight-image">
+                    <img src="images/portrait.webp" width="100" alt="{METADATA.title}" />
+                </div>
+                <Accordion.Root type="single" id="insight-tree" value={insight[0]?.title}>
+                    {#each insight as item}
+                        <Accordion.Item value={item.title} class="flex flex-col item">
+                            <Accordion.Header class="flex flex-col sm:flex-row">
+                                <Accordion.Trigger class="flex flex-row w-full">
+                                    <div class="flex flex-col">
+                                        <h4>{item.title}</h4>
+                                    </div>
+                                </Accordion.Trigger>
+                            </Accordion.Header>
+                            <Accordion.Content forceMount={true}>
+                                {#snippet child({ open })}
+                                    {#if open}
+                                        <div
+                                            class="insight-accordion ml-6 mr-6 transition-all duration-300 ease-out {open ? 'animate-accordion-down' : 'animate-accordion-up'}"
+                                        >
+                                            {@html item.html}
+                                        </div>
+                                    {/if}
+                                {/snippet}
+                            </Accordion.Content>
+                        </Accordion.Item>
+                    {/each}
+                </Accordion.Root>
+            </div>
         </section>
 
     </section>
