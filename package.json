@@ -50,7 +50,6 @@
         "classnames": "^2.5.1",
         "clsx": "^2.1.1",
         "marked": "^18.0.5",
-        "mode-watcher": "^1.1.0",
         "tailwind-merge": "^3.6.0",
         "tailwind-variants": "^3.2.2"
     }
