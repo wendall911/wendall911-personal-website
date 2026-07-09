@@ -4,28 +4,15 @@
         <meta charset="utf-8" />
         <link rel="icon" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script>
-            // Apply theme before first paint to avoid a flash of the wrong mode.
-            // Precedence: stored preference > system (when 'system') > default dark.
-            (function () {
-                var stored = localStorage.getItem('mode');
-                var mode = stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'dark';
-                var dark =
-                    mode === 'dark' ||
-                    (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-                document.documentElement.classList.toggle('dark', dark);
-                document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-            })();
-        </script>
-        <link href="/_app/immutable/entry/start.CiJO6YsN.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/CWa09juJ.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/CkrekxBk.js" rel="modulepreload">
+        <link href="/_app/immutable/entry/start.Ce8_SrwE.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/jF9fVCYq.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CUEbNhgF.js" rel="modulepreload">
 		<link href="/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
-		<link href="/_app/immutable/entry/app.DlSfiVLq.js" rel="modulepreload">
+		<link href="/_app/immutable/entry/app.DjoDb5v4.js" rel="modulepreload">
 		<link href="/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="/_app/immutable/nodes/0.tZxRXCE2.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/D2zr4mnG.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/B1YalTgt.js" rel="modulepreload">
+		<link href="/_app/immutable/nodes/0.DlgEbsdj.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/6royS2ah.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/WgQhP00Y.js" rel="modulepreload">
 		
 		<link href="/_app/immutable/assets/0.W__PbZWU.css" rel="stylesheet">
     </head>
@@ -33,15 +20,15 @@
         <div style="display: contents">
 			<script>
 				{
-					__sveltekit_1tio15n = {
+					__sveltekit_rniqt4 = {
 						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.CiJO6YsN.js"),
-						import("/_app/immutable/entry/app.DlSfiVLq.js")
+						import("/_app/immutable/entry/start.Ce8_SrwE.js"),
+						import("/_app/immutable/entry/app.DjoDb5v4.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});
