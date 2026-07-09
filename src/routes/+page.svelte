@@ -151,35 +151,36 @@
                 </Accordion.Root>
             </div>
         </section>
-    </section>
 
-    <section id="writings">
-        <header>
-            <h2>{sectionName['writings']}</h2>
-        </header>
-        <div class="content">
-            <ul class="m-4 space-y-6">
-                {#each writing as entry}
-                    <li>
-                        <p>
-                            <a href="/writing/{entry.slug}">
-                                {entry.title}
-                            </a> | {entry.date}
-                        </p>
-                        {#if entry.summary}
-                            <p>{entry.summary}</p>
-                        {/if}
-                    </li>
-                {/each}
-            </ul>
-        </div>
-    </section>
+        <section id="writings">
+            <header>
+                <h2>{sectionName['writings']}</h2>
+            </header>
+            <div class="content">
+                <ul class="list-disc">
+                    {#each writing as entry}
+                        <li class="ml-6 pt-2">
+                            <p>
+                                <a href="/writing/{entry.slug}">
+                                    {entry.title}
+                                </a> | {entry.date}
+                            </p>
+                            {#if entry.summary}
+                                <p>{entry.summary}</p>
+                            {/if}
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+        </section>
 
-    <section id="contact" class="mx-auto w-full max-w-content">
-        <header>
-            <h2>{sectionName['contact']}</h2>
-        </header>
-        <Contacts />
+        <section id="contact">
+            <header>
+                <h2>{sectionName['contact']}</h2>
+            </header>
+            <Contacts />
+        </section>
+
     </section>
 
 </main>
