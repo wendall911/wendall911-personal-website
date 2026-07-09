@@ -162,7 +162,7 @@
                 {#each writing as entry}
                     <li>
                         <p>
-                            <a href="/writings/{entry.slug}">
+                            <a href="/writing/{entry.slug}">
                                 {entry.title}
                             </a> | {entry.date}
                         </p>
