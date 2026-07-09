@@ -32,6 +32,17 @@
     });
 </script>
 
+<svelte:head>
+    <title>{METADATA.title}</title>
+    <meta name="description" content={METADATA.description} />
+    <meta property="og:site_name" content={METADATA['og:site_name']} />
+    <meta property="og:type" content={METADATA['og:type']} />
+    <meta property="og:title" content={METADATA.title} />
+    <meta property="og:description" content={METADATA.description} />
+    <meta property="og:url" content={METADATA.url} />
+    <meta property="og:image" content={METADATA['og:image']} />
+</svelte:head>
+
 <div bind:this={sentinel} aria-hidden="true"></div>
 <div class="background-image" role="img" aria-label="Background image of a mountain and valley landscape with a lake in the distance, at sunrise."></div>
 <nav id="nav" aria-label="Page navigation" data-sveltekit-reload={page.status >= 400 ? true : undefined}>

@@ -1,7 +1,10 @@
 export const METADATA = {
     title: 'Wendall Cada',
-    description: '',
+    description: 'Personal website for Wendall Cada. For professional connections and communication.',
+    url: 'https://wendallcada.com',
     'og:site_name': 'wendallcada.com',
+    'og:type': 'website',
+    'og:image': 'https://wendallcada.com/images/avatar.png',
 };
 
 export const INFO = {
