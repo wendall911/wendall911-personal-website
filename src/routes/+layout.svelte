@@ -3,7 +3,8 @@
     import { Menu, X, SunIcon, MoonIcon } from '@lucide/svelte';
     import { METADATA, INFO } from '$meta/info';
     import { NAVIGATION } from '$meta/links';
-    import { toggleMode, mode } from '$lib/mode.svelte';
+    import { toggleMode, mode } from 'mode-watcher';
+    import { ModeWatcher } from 'mode-watcher';
     import { page } from '$app/state';
 
     let { children } = $props();
@@ -23,14 +24,9 @@
 
         return () => observer.disconnect();
     });
-
-    // Re-assert the theme on every client-side navigation so the <html> class
-    // stays correct across route/error-boundary transitions.
-    $effect(() => {
-        void page.url.pathname;
-        mode.apply();
-    });
 </script>
+
+<ModeWatcher defaultMode="dark" />
 
 <div bind:this={sentinel} aria-hidden="true"></div>
 <div class="background-image" role="img" aria-label="Background image of a mountain and valley landscape with a lake in the distance, at sunrise."></div>
