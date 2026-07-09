@@ -134,7 +134,7 @@
 }
 
 #hello {
-    margin-top: calc(100dvh - 37rem);
+    margin-top: calc(100dvh - 33rem);
 }
 
 #cv, #writings, #contact, #writing {
