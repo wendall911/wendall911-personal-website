@@ -69,7 +69,7 @@
 }
 
 .background-image {
-    background-image: url('images/sunrise.webp');
+    background-image: url('/images/sunrise.webp');
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
@@ -137,7 +137,7 @@
     margin-top: 25rem;
 }
 
-#cv, #writings, #contact {
+#cv, #writings, #contact, #writing {
     a {
         @apply text-blue-700 dark:text-blue-300;
     }
@@ -150,7 +150,7 @@
     @apply px-8 py-8;
 }
 
-#cv div.content, #writings div.content, #contact div.content {
+#cv div.content, #writings div.content, #contact div.content, #writing div.content {
     @apply bg-white/70 dark:bg-zinc-900/70;
     @apply text-zinc-800 dark:text-zinc-100;
     @apply border-t-zinc-500 border-t-2;
