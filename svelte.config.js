@@ -6,7 +6,13 @@ const config = {
     preprocess: vitePreprocess(),
 
     kit: {
-        adapter: adapter(),
+        adapter: adapter(
+            {
+                pages: "./website",
+                assets: "./website",
+                fallback: "index.html"
+            }
+        ),
         csp: {
             mode: 'hash',
         },
