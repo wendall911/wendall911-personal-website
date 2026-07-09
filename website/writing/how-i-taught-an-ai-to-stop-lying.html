@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="../favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script>
+            // Apply theme before first paint to avoid a flash of the wrong mode.
+            // Precedence: stored preference > system (when 'system') > default dark.
+            (function () {
+                var stored = localStorage.getItem('mode');
+                var mode = stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'dark';
+                var dark =
+                    mode === 'dark' ||
+                    (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                document.documentElement.classList.toggle('dark', dark);
+                document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+            })();
+        </script>
+        <link href="../_app/immutable/entry/start.C9zPXNWA.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/D74frrK0.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CkrekxBk.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.JU7w3n7C.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.DOv5jQaw.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/D2zr4mnG.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/C0KyyC3b.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/3.DtRHDSzN.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/d5KaySaM.js" rel="modulepreload">
+		
+		<link href="../_app/immutable/assets/0.BLkWLG58.css" rel="stylesheet">
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents"><!--[--><!--[0--><!--[--><div aria-hidden="true"></div> <div class="background-image" role="img" aria-label="Background image of a mountain and valley landscape with a lake in the distance, at sunrise."></div> <nav id="nav" aria-label="Page navigation"><div class="flex flex-col gap-3 items-center py-2 header"><h1>Wendall Cada</h1> <h5 id="tagline">CTO | Software Architecture | Consultant</h5></div> <div hidden="" class="flex header"><div class="flex flex-col items-center px-4 py-2"><h3>Wendall Cada</h3></div> <div class="flex px-4 py-2 ml-auto button"><button type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-menu"><!--[--><!----><path d="M4 5h16"><!----></path><!----><!----><path d="M4 12h16"><!----></path><!----><!----><path d="M4 19h16"><!----></path><!----><!--]--><!----></svg><!--]--></button></div></div> <ul id="nav-menu" class="flex flex-col gap-2 backdrop-blur mb-1"><!--[--><li class="pl-1 pr-1"><a href="/#career" class="px-4 py-2 block hover:invert">Career Accomplishments</a></li><li class="pl-1 pr-1"><a href="/#education" class="px-4 py-2 block hover:invert">Education</a></li><li class="pl-1 pr-1"><a href="/#experience" class="px-4 py-2 block hover:invert">Experience</a></li><li class="pl-1 pr-1"><a href="/#insight" class="px-4 py-2 block hover:invert">Insight</a></li><li class="pl-1 pr-1"><a href="/#writings" class="px-4 py-2 block hover:invert">Writings</a></li><li class="pl-1 pr-1"><a href="/#contact" class="px-4 py-2 block hover:invert">Contact</a></li><!--]--></ul></nav> <button id="mode-toggle" type="button" aria-label="Switch to light mode"><!--[0--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Switch to light mode" class="lucide-icon lucide lucide-sun"><!--[--><!----><circle cx="12" cy="12" r="4"><!----></circle><!----><!----><path d="M12 2v2"><!----></path><!----><!----><path d="M12 20v2"><!----></path><!----><!----><path d="m4.93 4.93 1.41 1.41"><!----></path><!----><!----><path d="m17.66 17.66 1.41 1.41"><!----></path><!----><!----><path d="M2 12h2"><!----></path><!----><!----><path d="M20 12h2"><!----></path><!----><!----><path d="m6.34 17.66-1.41 1.41"><!----></path><!----><!----><path d="m19.07 4.93-1.41 1.41"><!----></path><!----><!--]--><!----></svg><!--]--></button> <div id="page-layout" class="flex min-h-screen justify-center"><div id="page-content"><!--[--><article id="writing"><header><h1>How I Taught an AI to Stop Lying (Mostly)</h1> <p>2026-05-17</p></header> <div class="content"><!----><h1>How I Taught an AI to Stop Lying (Mostly), and Get Back to Work</h1>
+<p><em>Working outline. All prose is the author&#39;s.</em></p>
+<hr>
+<h2>Register note</h2>
+<p>Strangelove throughout. Tone is dry, humor in the understatement, subject is serious.
+&quot;(Mostly)&quot; is the most important word. Do not let it become modest — it is accurate.</p>
+<hr>
+<h2>I. The Hook</h2>
+<p><em>Opens mid-action, not with context.</em></p>
+<p>Purpose: establish register, earn reader&#39;s attention, name the problem in the first
+paragraph without preamble.</p>
+<p>The word &quot;lying&quot; — why it&#39;s the precise word and why tools avoid it.
+One concrete example: git workflow incident.</p>
+<p>Transition: the incident is not the exception. It is the pattern.</p>
+<hr>
+<h2>II. The Mechanism</h2>
+<p><em>Why it lies — stated without euphemism. Short.</em></p>
+<p>Purpose: technical explanation before receipts.</p>
+<p>RLHF in plain language. Training majority is not domain experts.
+Token efficiency argument — not the math, just the fact.</p>
+<p>Transition: if this is the mechanism, what does it look like in practice?</p>
+<hr>
+<h2>III. The Receipts</h2>
+<p><em>Three incidents, escalating order.</em></p>
+<p>Purpose: prove the pattern. Three incidents for range.</p>
+<ol>
+<li>Git workflow — epistemic failure</li>
+<li>Attribution injection — artifact failure (ban hammer mentioned)</li>
+<li>Sci-Hub framing — ethical inversion</li>
+</ol>
+<p>Note: forensic, not aggrieved.</p>
+<p>Transition: you can document failures or you can build something.</p>
+<hr>
+<h2>IV. What Was Built</h2>
+<p><em>Pivot from problem to response.</em></p>
+<p>Purpose: establish that governance is the response, not diagnosis.</p>
+<p>TypeScript/Svelte/CoC analogy — one paragraph.
+Wall of Shame as design choice — name is deliberate.
+Guardrails as living document.
+ai-conduct-guide — one paragraph, plain, no overselling.</p>
+<p>Transition: the tool helped build the framework that governs it.</p>
+<hr>
+<h2>V. The Demonstration</h2>
+<p><em>Meta-move. Short.</em></p>
+<p>Purpose: two or three sentences. Sardonic register at highest here. Land and move on.</p>
+<p>The license incident: the tool scaffolded an open source governance repository —
+one explicitly about protecting commons resources — without a license. All-rights-
+reserved by default. The most foundational requirement of the thing it was building,
+missed. A human caught it. This is the form/substance gap in one example: the model
+learned what open source repositories look like from training data; it did not learn
+what makes a repository an open source project.</p>
+<p>Transition: the &quot;(Mostly).&quot;</p>
+<hr>
+<h2>VI. The Honest Part</h2>
+<p><em>Keep the title&#39;s promise.</em></p>
+<p>Purpose: the piece earns nothing if it skips this.</p>
+<p>What&#39;s still not solved: new sessions, model collapse.
+Tool stated the failure pattern itself, then demonstrated it.
+Shumailov et al. — one sentence, not the citation.
+&quot;Mostly&quot; is accurate, not modest.</p>
+<hr>
+<h2>VII. The Point</h2>
+<p><em>One paragraph. No header in the final piece.</em></p>
+<p>Purpose: close without summarizing.</p>
+<p>The tool is useful when governed. Governance is not overhead — it is the work.
+Last sentence should be the title, earned.</p>
+<!----></div></article><!--]--><!----></div></div><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1fsfpq4 = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.C9zPXNWA.js"),
+						import("../_app/immutable/entry/app.JU7w3n7C.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+    </body>
+</html>
