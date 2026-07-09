@@ -4,44 +4,35 @@
         <meta charset="utf-8" />
         <link rel="icon" href="../../favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="../../_app/immutable/entry/start.Ce8_SrwE.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/jF9fVCYq.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/CUEbNhgF.js" rel="modulepreload">
+        <script>
+            // Apply theme before first paint to avoid a flash of the wrong mode.
+            // Precedence: stored preference > system (when 'system') > default dark.
+            (function () {
+                var stored = localStorage.getItem('mode');
+                var mode = stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'dark';
+                var dark =
+                    mode === 'dark' ||
+                    (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                document.documentElement.classList.toggle('dark', dark);
+                document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+            })();
+        </script>
+        <link href="../../_app/immutable/entry/start.CiJO6YsN.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CWa09juJ.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CkrekxBk.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.DjoDb5v4.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.DlSfiVLq.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/0.DlgEbsdj.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/6royS2ah.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/WgQhP00Y.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/3._ozzwgW7.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.tZxRXCE2.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D2zr4mnG.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B1YalTgt.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/3.DtRHDSzN.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/d5KaySaM.js" rel="modulepreload">
-		<!--1js74gg--><!--[-1--><!--]--> <!----><script>(function setInitialMode({ defaultMode = "system", themeColors, darkClassNames = ["dark"], lightClassNames = [], defaultTheme = "", modeStorageKey = "mode-watcher-mode", themeStorageKey = "mode-watcher-theme" }) {
-	const rootEl = document.documentElement;
-	const mode = localStorage.getItem(modeStorageKey) ?? defaultMode;
-	const theme = localStorage.getItem(themeStorageKey) ?? defaultTheme;
-	const light = mode === "light" || mode === "system" && window.matchMedia("(prefers-color-scheme: light)").matches;
-	if (light) {
-		if (darkClassNames.length) rootEl.classList.remove(...darkClassNames.filter(Boolean));
-		if (lightClassNames.length) rootEl.classList.add(...lightClassNames.filter(Boolean));
-	} else {
-		if (lightClassNames.length) rootEl.classList.remove(...lightClassNames.filter(Boolean));
-		if (darkClassNames.length) rootEl.classList.add(...darkClassNames.filter(Boolean));
-	}
-	rootEl.style.colorScheme = light ? "light" : "dark";
-	if (themeColors) {
-		const themeMetaEl = document.querySelector("meta[name=\"theme-color\"]");
-		if (themeMetaEl) themeMetaEl.setAttribute("content", mode === "light" ? themeColors.light : themeColors.dark);
-	}
-	if (theme) {
-		rootEl.setAttribute("data-theme", theme);
-		localStorage.setItem(themeStorageKey, theme);
-	}
-	localStorage.setItem(modeStorageKey, mode);
-})({"defaultMode":"dark","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script><!----><!---->
+		
 		<link href="../../_app/immutable/assets/0.W__PbZWU.css" rel="stylesheet">
     </head>
     <body data-sveltekit-preload-data="hover">
-        <div style="display: contents"><!--[--><!--[0--><!--[--><!--[-1--><!--]--><!----> <div aria-hidden="true"></div> <div class="background-image" role="img" aria-label="Background image of a mountain and valley landscape with a lake in the distance, at sunrise."></div> <nav id="nav" aria-label="Page navigation"><div class="flex flex-col gap-3 items-center py-2 header"><h1>Wendall Cada</h1> <h5 id="tagline">CTO | Software Architecture | Consultant</h5></div> <div hidden="" class="flex header"><div class="flex flex-col items-center px-4 py-2"><h3>Wendall Cada</h3></div> <div class="flex px-4 py-2 ml-auto button"><button type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-menu"><!--[--><!----><path d="M4 5h16"><!----></path><!----><!----><path d="M4 12h16"><!----></path><!----><!----><path d="M4 19h16"><!----></path><!----><!--]--><!----></svg><!--]--></button></div></div> <ul id="nav-menu" class="flex flex-col gap-2 backdrop-blur mb-1"><!--[--><li class="pl-1 pr-1"><a href="/#career" class="px-4 py-2 block hover:invert">Career Accomplishments</a></li><li class="pl-1 pr-1"><a href="/#education" class="px-4 py-2 block hover:invert">Education</a></li><li class="pl-1 pr-1"><a href="/#experience" class="px-4 py-2 block hover:invert">Experience</a></li><li class="pl-1 pr-1"><a href="/#insight" class="px-4 py-2 block hover:invert">Insight</a></li><li class="pl-1 pr-1"><a href="/#writings" class="px-4 py-2 block hover:invert">Writings</a></li><li class="pl-1 pr-1"><a href="/#contact" class="px-4 py-2 block hover:invert">Contact</a></li><!--]--></ul></nav> <button id="mode-toggle" type="button" aria-label="Switch to dark mode"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Switch to dark mode" class="lucide-icon lucide lucide-moon"><!--[--><!----><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"><!----></path><!----><!--]--><!----></svg><!--]--></button> <div id="page-layout" class="flex min-h-screen justify-center"><div id="page-content"><!--[--><article id="writing"><header><h1>How I Taught an AI to Stop Lying (Mostly)</h1> <p>2026-05-17</p></header> <div class="content"><!----><h1>How I Taught an AI to Stop Lying (Mostly), and Get Back to Work</h1>
+        <div style="display: contents"><!--[--><!--[0--><!--[--><div aria-hidden="true"></div> <div class="background-image" role="img" aria-label="Background image of a mountain and valley landscape with a lake in the distance, at sunrise."></div> <nav id="nav" aria-label="Page navigation"><div class="flex flex-col gap-3 items-center py-2 header"><h1>Wendall Cada</h1> <h5 id="tagline">CTO | Software Architecture | Consultant</h5></div> <div hidden="" class="flex header"><div class="flex flex-col items-center px-4 py-2"><h3>Wendall Cada</h3></div> <div class="flex px-4 py-2 ml-auto button"><button type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-menu"><!--[--><!----><path d="M4 5h16"><!----></path><!----><!----><path d="M4 12h16"><!----></path><!----><!----><path d="M4 19h16"><!----></path><!----><!--]--><!----></svg><!--]--></button></div></div> <ul id="nav-menu" class="flex flex-col gap-2 backdrop-blur mb-1"><!--[--><li class="pl-1 pr-1"><a href="/#career" class="px-4 py-2 block hover:invert">Career Accomplishments</a></li><li class="pl-1 pr-1"><a href="/#education" class="px-4 py-2 block hover:invert">Education</a></li><li class="pl-1 pr-1"><a href="/#experience" class="px-4 py-2 block hover:invert">Experience</a></li><li class="pl-1 pr-1"><a href="/#insight" class="px-4 py-2 block hover:invert">Insight</a></li><li class="pl-1 pr-1"><a href="/#writings" class="px-4 py-2 block hover:invert">Writings</a></li><li class="pl-1 pr-1"><a href="/#contact" class="px-4 py-2 block hover:invert">Contact</a></li><!--]--></ul></nav> <button id="mode-toggle" type="button" aria-label="Switch to light mode"><!--[0--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Switch to light mode" class="lucide-icon lucide lucide-sun"><!--[--><!----><circle cx="12" cy="12" r="4"><!----></circle><!----><!----><path d="M12 2v2"><!----></path><!----><!----><path d="M12 20v2"><!----></path><!----><!----><path d="m4.93 4.93 1.41 1.41"><!----></path><!----><!----><path d="m17.66 17.66 1.41 1.41"><!----></path><!----><!----><path d="M2 12h2"><!----></path><!----><!----><path d="M20 12h2"><!----></path><!----><!----><path d="m6.34 17.66-1.41 1.41"><!----></path><!----><!----><path d="m19.07 4.93-1.41 1.41"><!----></path><!----><!--]--><!----></svg><!--]--></button> <div id="page-layout" class="flex min-h-screen justify-center"><div id="page-content"><!--[--><article id="writing"><header><h1>How I Taught an AI to Stop Lying (Mostly)</h1> <p>2026-05-17</p></header> <div class="content"><!----><h1>How I Taught an AI to Stop Lying (Mostly), and Get Back to Work</h1>
 <p><em>Working outline. All prose is the author&#39;s.</em></p>
 <hr>
 <h2>Register note</h2>
@@ -111,15 +102,15 @@ Last sentence should be the title, earned.</p>
 			
 			<script>
 				{
-					__sveltekit_rniqt4 = {
+					__sveltekit_1tio15n = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.Ce8_SrwE.js"),
-						import("../../_app/immutable/entry/app.DjoDb5v4.js")
+						import("../../_app/immutable/entry/start.CiJO6YsN.js"),
+						import("../../_app/immutable/entry/app.DlSfiVLq.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],

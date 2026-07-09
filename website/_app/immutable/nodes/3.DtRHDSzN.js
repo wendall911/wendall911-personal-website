@@ -1,4 +1,4 @@
-import{$ as e,B as t,H as n,L as r,M as i,Q as a,S as o,_ as s,ot as c,q as l,rt as u,w as d,x as f}from"../chunks/CUEbNhgF.js";import{n as p}from"../chunks/BuFlayix.js";import"../chunks/xihTtKlq.js";import{n as m,t as h}from"../chunks/d5KaySaM.js";var g=`# How I Taught an AI to Stop Lying (Mostly), and Get Back to Work
+import{C as e,I as t,K as n,Q as r,V as i,Z as a,at as o,b as s,g as c,j as l,nt as u,x as d,z as f}from"../chunks/CkrekxBk.js";import{n as p}from"../chunks/BuFlayix.js";import"../chunks/xihTtKlq.js";import{n as m,t as h}from"../chunks/d5KaySaM.js";var g=`# How I Taught an AI to Stop Lying (Mostly), and Get Back to Work
 
 *Working outline. All prose is the author's.*
 
@@ -107,4 +107,4 @@ Purpose: close without summarizing.
 
 The tool is useful when governed. Governance is not overhead — it is the work.
 Last sentence should be the title, earned.
-`;function _(e,t){throw new p(e,t)}var v=c({load:()=>b}),y=Object.assign({"/src/content/writing/how-i-taught-an-ai-to-stop-lying.md":g}),b=({params:e})=>{let t=h.find(t=>t.slug===e.slug),n=y[`/src/content/writing/${e.slug}.md`];return(!t||!n)&&_(404,`Writing not found`),{entry:t,html:m.parse(n)}},x=d(`<article id="writing"><header><h1> </h1> <p> </p></header> <div class="content"></div></article>`);function S(c,d){e(d,!0);let p=l(()=>d.data.entry),m=l(()=>d.data.html);var h=x(),g=t(h),_=t(g),v=t(_,!0);u(_);var y=n(_,2),b=t(y,!0);u(y),u(g);var S=n(g,2);s(S,()=>i(m),!0),u(S),u(h),r(()=>{f(v,i(p).title),f(b,i(p).date)}),o(c,h),a()}export{S as component,v as universal};
+`;function _(e,t){throw new p(e,t)}var v=o({load:()=>b}),y=Object.assign({"/src/content/writing/how-i-taught-an-ai-to-stop-lying.md":g}),b=({params:e})=>{let t=h.find(t=>t.slug===e.slug),n=y[`/src/content/writing/${e.slug}.md`];return(!t||!n)&&_(404,`Writing not found`),{entry:t,html:m.parse(n)}},x=e(`<article id="writing"><header><h1> </h1> <p> </p></header> <div class="content"></div></article>`);function S(e,o){r(o,!0);let p=n(()=>o.data.entry),m=n(()=>o.data.html);var h=x(),g=f(h),_=f(g),v=f(_,!0);u(_);var y=i(_,2),b=f(y,!0);u(y),u(g);var S=i(g,2);c(S,()=>l(m),!0),u(S),u(h),t(()=>{s(v,l(p).title),s(b,l(p).date)}),d(e,h),a()}export{S as component,v as universal};
