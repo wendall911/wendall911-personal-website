@@ -9,8 +9,7 @@ const config = {
         adapter: adapter(
             {
                 pages: "./website",
-                assets: "./website",
-                fallback: "index.html"
+                assets: "./website"
             }
         ),
         inlineStyleThreshold: 51200,
