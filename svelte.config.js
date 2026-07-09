@@ -13,6 +13,7 @@ const config = {
                 fallback: "index.html"
             }
         ),
+        inlineStyleThreshold: 51200,
         csp: {
             mode: 'hash',
         },
