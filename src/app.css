@@ -42,7 +42,7 @@
         U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
 
 @theme {
     --width-nav: 25rem;
@@ -79,8 +79,13 @@
 }
 
 @layer base {
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
     body {
-        @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
+        @apply light:bg-white light:text-zinc-900 bg-zinc-950 text-zinc-100;
     }
     h1 {
         @apply pb-1 text-3xl sm:pb-2 sm:text-5xl;
@@ -134,13 +139,13 @@
     overflow-y: auto;
     width: min(var(--width-nav), 100%);
     a {
-        @apply text-zinc-700 dark:text-zinc-300;
+        @apply light:text-zinc-700 text-zinc-300;
     }
     a:hover {
-        @apply text-zinc-900 dark:text-zinc-100;
+        @apply light:text-zinc-900 text-zinc-100;
     }
     li {
-        @apply hover:bg-zinc-900/80 hover:text-white/80 dark:hover:bg-white/80 dark:hover:text-zinc-900/80
+        @apply light:hover:bg-zinc-900/80 light:hover:text-white/80 hover:bg-white/80 hover:text-zinc-900/80
     }
 }
 
@@ -163,15 +168,15 @@
 }
 
 #nav div.button, #nav ul, header {
-    @apply bg-white/85 dark:bg-zinc-900/85;
+    @apply light:bg-white/85 bg-zinc-900/85;
 }
 
 #nav div.header {
-    @apply bg-white/60 dark:bg-zinc-900/60;
+    @apply light:bg-white/60 bg-zinc-900/60;
 }
 
 #tagline {
-    @apply text-yellow-700 dark:text-yellow-500;
+    @apply light:text-yellow-700 text-yellow-500;
 }
 
 #hello {
@@ -180,10 +185,10 @@
 
 #cv, #writing {
     a {
-        @apply text-blue-700 dark:text-blue-300;
+        @apply light:text-blue-700 text-blue-300;
     }
     a:hover {
-        @apply underline text-blue-900 dark:text-blue-100;
+        @apply underline light:text-blue-900 text-blue-100;
     }
     section {
         @apply pt-15;
@@ -192,8 +197,8 @@
 }
 
 #cv div.content, #writing div.content {
-    @apply bg-white/70 dark:bg-zinc-900/70;
-    @apply text-zinc-800 dark:text-zinc-100;
+    @apply light:bg-white/70 bg-zinc-900/70;
+    @apply light:text-zinc-800 text-zinc-100;
     @apply border-t-zinc-500 border-t-2;
 }
 
@@ -246,8 +251,8 @@ header {
 #experience .role-accordion, #insight .insight-accordion {
     padding: 0.5rem 1.5rem;
     @apply overflow-hidden;
-    @apply bg-white/90 dark:bg-zinc-900/90;
-    @apply text-zinc-600 dark:text-zinc-100;
+    @apply light:bg-white/90 bg-zinc-900/90;
+    @apply light:text-zinc-600 text-zinc-100;
     margin-bottom: 1rem;
 }
 

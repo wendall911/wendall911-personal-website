@@ -45,9 +45,8 @@ class ModeState {
     apply() {
         if (!browser) return;
         const html = document.documentElement;
-        const dark = this.current === 'dark';
-        html.classList.toggle('dark', dark);
-        html.style.colorScheme = dark ? 'dark' : 'light';
+        html.classList.toggle('light', this.current === 'light');
+        html.style.colorScheme = this.current;
     }
 }
 
