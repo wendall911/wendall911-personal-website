@@ -1,10 +1,11 @@
 <script lang="ts">
     import '../app.css';
-    import { Menu, X, SunIcon, MoonIcon } from '@lucide/svelte';
+    import { Menu, X } from '@lucide/svelte';
     import { METADATA, INFO } from '$meta/info';
     import { NAVIGATION } from '$meta/links';
-    import { toggleMode, mode } from '$lib/mode.svelte';
+    import { mode } from '$lib/mode.svelte';
     import { page } from '$app/state';
+    import ModeToggle from '$comp/ModeToggle.svelte';
 
     let { children } = $props();
 
@@ -89,18 +90,7 @@
     </ul>
 </nav>
 
-<button
-    id="mode-toggle"
-    type="button"
-    onclick={toggleMode}
-    aria-label={mode.current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
->
-    {#if mode.current === 'dark'}
-        <SunIcon aria-label="Switch to light mode" size={20} strokeWidth={1.5} />
-    {:else}
-        <MoonIcon aria-label="Switch to dark mode" size={20} strokeWidth={1.5} />
-    {/if}
-</button>
+<ModeToggle />
 
 <div id="page-layout" class="flex min-h-screen justify-center">
     <div id="page-content">
